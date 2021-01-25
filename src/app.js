@@ -5,6 +5,8 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000 //esto es para heroku, || y si no existe q use el 3000
+
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public') //lo use para agregar css y js antes de hbs
@@ -100,10 +102,19 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+// app.listen(3000, () => {
+//     console.log('Server is up on port 3000')
+// })
+
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
 
+
+
+
+//////////////////////////// interesting
 //si pongo res.send (envia como json)
 // app.get('/weather', (req, res) => {
 //     res.send('string cualquiera')
