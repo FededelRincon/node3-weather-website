@@ -123,4 +123,9 @@ app.listen(port, () => {
 
 
 //////////////////// NODEMON
+//con consola comun
 //nodemon src/app.js -e js, hbs, css
+
+//con script en package.json
+//"dev": "nodemon src/app.js -e js,hbs,css"
+//>>npm run dev
